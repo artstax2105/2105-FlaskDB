@@ -1,0 +1,20 @@
+        ◦ Обновляем список пакетов
+    • sudo apt update
+    • Устанавливаем пакеты Postgres и contrib
+    • sudo apt install postgresql postgresql-contrib
+    • Запускаем сервер PostgreSQL
+    • sudo -u postgres psql
+
+    6. Создаем базу данных
+        ◦ Создаем базу данных
+    • CREATE DATABASE service_db;
+        ◦ Подключаемся к базе данных
+    • \c service_db
+        ◦ Создаем схему
+    • CREATE SCHEMA service;
+        ◦ Создаем таблицу пользователей
+    • CREATE TABLE service.users (id SERIAL NOT NULL, full_name VARCHAR NOT NULL, login VARCHAR NOT NULL, password VARCHAR NOT NULL);
+        ◦ Заполняем таблицу пользователей
+    • INSERT INTO service.users (full_name, login, password) VALUES ('<Полное имя пользователя>','<логин>', '<пароль>');
+    • Проверяем заполнение таблицы
+    • SELECT * FROM service.users;
